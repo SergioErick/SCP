@@ -29,5 +29,3 @@ while True:
         # msg_sleep(txt = ['Finalizando ','1 ','2 ','3 ','4 ''.','.','.','\n'], sequence = True)
         break
     
-    jogar_novamente = check_not_yes('Deseja jogar novamente')
-    

@@ -5,73 +5,52 @@ from formats import *
 class math:
     def __init__(self):
         self.acertos = self.erros = tentativas = 0
-        contas = ['//','*','+','-']
+        self.operation_math = {1: "/",2: '*', 3: '+', 4: '-'}
         
         while True:
             if tentativas == 0:
                 menu(txt = ['Apenas de Divisão','Apenas Multiplicação','Apenas Soma','Apenas subtração','Aleatório','Rules','Sair'], title = 'Matemática')
                 react = checkNumber()
             
-            if react not in [1,2,3,4,5,6,7]:
+            if 0 > react > 7:
                 continue
-            
-            if react == 7:
-                break
-            
-            elif react == 1:
-                self.divisao()
-            
-            elif react == 2:
-                self.vezes()
-            
-            elif react == 3:
-                self.soma()
-            
-            elif react == 4:
-                self.menos()
-            
-            elif react == 5:
-                self.aletory()
+               
+            elif react == 7:
+                return
+        
+            else:
+                global a,b
+                i = react
                 
-            elif react == 6:
-                self.rules()
+                if react == 5:
+                    i = randint(1,4)
+                
+                op = self.operation_math[i]
+                a = randint(0,1000)
+                b = randint(0,1000)
+                
+                ab = f'{a}{op}{b}'
+                
+                self.player = checkNumberFloat(f'Quanto é {ab}: ')
+                self.correct = eval(ab)
+                
+                self.check_correct()
+                
             
             tentativas += 1
-            self.check_correct()
             
-            if not check_not_yes('Deseja continuar'):
+            if not check_not_yes('\nDeseja continuar'):
                 break
             
             
-        print(f'Você acertou {self.acertos} e errou {self.erros}. De {tentativas} tentaivas.')
+        print(f'Você acertou {self.acertos} e errou {self.erros}. De {tentativas} tentativas.')
             
-                
-    def divisao(self):
-        global a,b
-        
-        a = randint(0,1000)
-        b = randint(0,1000)
-        
-        self.player = checkNumberFloat(f'Quanto é {a} / {b}: ')
-        self.correct = a / b
-        
-    def vezes(self):
-        pass
-    
-    def soma(self):
-        pass
-   
-    def menos(self):
-        pass
-   
-    def aletory(self):
-        pass
     
     def rules(self):
         pass
     
     def check_correct(self):
-        if f"{self.correct:.2f}" == f"{self.player:.2f}":
+        if self.correct == self.player:
             print('\033[4;32mAcertou\033[m')
             self.acertos += 1
             
