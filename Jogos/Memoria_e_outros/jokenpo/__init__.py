@@ -16,7 +16,7 @@ class jokenpo:
             menu(txt = ['Pedra', 'Papel', 'Tesoura', 'Sair'], title = 'Jokênpo')
             self.player_play = checkNumber()
             
-            if self.player_play in [1,2,3,4]:
+            if 0 < self.player_play <= 4:
                 break
         
         if self.player_play == 4:

@@ -67,10 +67,10 @@ class memoria:
         self.player_time()
         
     def player_time(self):
-        for i in range(0, self.rodadas):
+        for i in range(1, self.rodadas +1):
             print('\033[33m')
             
-            print(f'\nDigite o {i + 1}º que apareceu.')
+            print(f'\nDigite o {i}º que apareceu.')
             n = checkNumber()
             
             print('\033[m')
