@@ -37,17 +37,9 @@ class memoria:
         print(f'\nVocê acertou \033[4;32m{self.acertos}\033[m e errou \033[1;31m{self.erros}\033[m de um total de {self.acertos + self.erros} rodadas\n')
         
     def start(self, difficulty):
-        if difficulty == 1:
-            velocity = 0.8
-        
-        elif difficulty == 2:
-            velocity = 0.6
-            
-        elif difficulty == 3:
-            velocity = 0.4
-        
-        elif difficulty == 4:
-            return False
+        #*Um dicionário com as velocidades com as chaves ligadas com as opções do menu.
+        dict_velocity = {1: 0.8, 2: 0.6, 3: 0.4}
+        velocity = dict_velocity[difficulty]
          
         print('\033[1;36m')   
         print('\n','-=-' * 16)
@@ -76,10 +68,11 @@ class memoria:
             print('\033[m')
             
             self.player_numbers.append([n][:])
-            
-        for check in self.player_numbers:
-            if check not in self.computer_numbers:
-                self.erros += 1
-            
-            else:
+        
+        #*Verifica se o player acertou ;)
+        for i in range(0, len(self.computer_numbers)):
+            if self.player_numbers[i] == self.computer_numbers[i]:
                 self.acertos += 1
+                
+            else:
+                self.erros += 1

@@ -9,15 +9,15 @@ class math:
         
         while True:
             if tentativas == 0:
-                menu(txt = ['Apenas de Divisão','Apenas Multiplicação','Apenas Soma','Apenas subtração','Aleatório','Rules','Sair'], title = 'Matemática')
+                menu(txt = ['Apenas de Divisão','Apenas Multiplicação','Apenas Soma','Apenas subtração','Aleatório','Sair'], title = 'Matemática')
                 react = checkNumber()
             
-            if 0 > react > 7:
+            if 0 > react > 6:
                 continue
                
-            elif react == 7:
+            elif react == 6:
                 return
-        
+            
             else:
                 global a,b
                 i = react
@@ -45,10 +45,6 @@ class math:
             
         print(f'Você acertou {self.acertos} e errou {self.erros}. De {tentativas} tentativas.')
             
-    
-    def rules(self):
-        pass
-    
     def check_correct(self):
         if self.correct == self.player:
             print('\033[4;32mAcertou\033[m')

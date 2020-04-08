@@ -24,16 +24,23 @@ class jokenpo:
         
         msg_sleep(txt = ['Jo...','kên...','po...'])
         
-        line(f'\nO pc escolheu {self.computer_play} e você {self.player_play}\n', color = '\033[31m')
+        line(f'\nO pc escolheu {game[self.computer_play]} e você {game[self.player_play]}\n', color = '\033[31m')
 
         self.who_is_winner()
         
     def who_is_winner(self):
-        if self.computer_play == self.player_play:
+        '''
+        Essa função decide quem ganhou, ela usa um príncipio matemático para decidir quem ganhou. :)
+        '''
+        
+        pc = self.computer_play
+        us = self.player_play
+        
+        if pc == us:
             line('Empate', color = '\033[37m')
             
-        elif self.computer_play - self.player_play == -2 or self.computer_play - self.player_play == 1:
+        elif pc - us == -2 or pc - us == 1:
             line('\nO computador ganhou\n', color = '\033[1;31m')
             
-        elif self.player_play - self.computer_play == -2 or self.player_play - self.computer_play == 1:
+        else:
             line('\nO player ganhou\n', color = '\033[4;32m')
