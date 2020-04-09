@@ -127,3 +127,33 @@ def msg_sleep(txt, time = 0.5, sequence = False):
         
     print(f"\n{'~' * 50}\033[m\n")
     
+class ColorHelp:
+    def open(color = 'branco', color_background = '', style = ''):
+        colors = {
+            
+            'branco':30,
+            'vermelho':31,
+            'verde':32,
+            'amarelo':33,
+            'azul':34,
+            'roxo':35,
+            'azul_claro':36,
+            'cinza':37,
+            
+        }
+        style = {
+            
+                
+
+        }
+        
+        color = color.lower()
+        
+        if color_background == '': 
+            print(f'\033[{colors[color]}m')
+            
+        elif style == '':
+            print(f'\033[{colors[color]};{colors[color] + 10}m')
+        
+        else:
+            print(f'\033[{colors[color]};{colors[color] + 10};{colors[color] - 30}m')

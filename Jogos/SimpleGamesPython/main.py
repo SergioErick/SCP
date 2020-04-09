@@ -3,6 +3,9 @@ from memoria import *
 from math_game import *
 from jokenpo import *
 
+ColorHelp.open(color = 'amarelo', color_background = '', style = 'verde')
+
+print('Teste para função de "Formats" ColorHelp')
 
 while True:
     #*Cria um menu através do módulo 'formats'--------------------------------------------
