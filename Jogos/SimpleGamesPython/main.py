@@ -20,5 +20,5 @@ while True:
         continue
         
     elif action == 4:
-        #!msg_sleep(txt = ['Finalizando ','1 ','2 ','3 ','4 ''.','.','.','\n'], sequence = True)
+        #!msg_sleep(txt = ['Finalizando ','1 ','2 ','3 ','4 ''.','.','.','\n'], sequence = True) Está comentado, pois desacelera o processo de saída.
         break

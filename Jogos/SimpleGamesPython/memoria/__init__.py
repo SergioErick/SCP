@@ -6,12 +6,13 @@ from time import sleep
 class memoria:
     
     def __init__(self):
-        self.rodadas = 1
-        self.acertos = self.erros = 0
+        self.rodadas = self.acertos = self.erros = 0
         self.computer_numbers = list()
         self.player_numbers = list()
         
         while True:
+            self.rodadas += 1
+            
             if self.rodadas == 1:
                 menu(txt = ['Facíl', 'Médio', 'Difícil', 'Sair'], title = 'Jogo da Memória')
                 difficulty = checkNumber()
@@ -28,8 +29,6 @@ class memoria:
             if self.erros > 0:
                 break
             
-            self.rodadas += 1
-            
             self.computer_numbers.clear()
             self.player_numbers.clear()
         
@@ -37,7 +36,7 @@ class memoria:
         print(f'\nVocê acertou \033[4;32m{self.acertos}\033[m e errou \033[1;31m{self.erros}\033[m de um total de {self.acertos + self.erros} rodadas\n')
         
     def start(self, difficulty):
-        #*Um dicionário com as velocidades com as chaves ligadas com as opções do menu.
+        #*Um dicionário com as velocidades ligadas com as opções do menu.
         dict_velocity = {1: 0.8, 2: 0.6, 3: 0.4}
         velocity = dict_velocity[difficulty]
          
