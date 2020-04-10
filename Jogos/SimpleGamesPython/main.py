@@ -2,14 +2,28 @@ from formats import *
 from memoria import *
 from math_game import *
 from jokenpo import *
+import os,shutil
 
-ColorHelp.open(color = 'amarelo', color_background = '', style = 'verde')
+user = os.getlogin()
+dir = os.getcwd()
+Dpath = dir + '\Jogos\SimpleGamesPython\data'
 
-print('Teste para função de "Formats" ColorHelp')
+class file:
+    def __init__(self, FileName = f'{Dpath}\config.txt'):
+        if not os.path.exists(Dpath):
+            os.mkdir(Dpath)
+            
+        if not os.path.exists(FileName):
+            load = open(FileName, 'wt')
+            load.write(f'USER: {user}\n')
+            load.close()
+
+
+file()
 
 while True:
     #*Cria um menu através do módulo 'formats'--------------------------------------------
-    menu(txt = ['Memória','Jokênpo','Matematica','Sair'], title = 'Bem vindo ao Jogos 2.0')
+    menu(txt = ['Memória','Jokênpo','Matematica','Sair'], title = f'Bem vindo {user} ao Jogos 2.0')
     action = checkNumber()
     
     if action == 1:

@@ -40,7 +40,7 @@ class memoria:
         dict_velocity = {1: 0.8, 2: 0.6, 3: 0.4}
         velocity = dict_velocity[difficulty]
          
-        print('\033[1;36m')   
+        ColorH.open('azul_claro', style = 'bold')
         print('\n','-=-' * 16)
         
         for i in range(0, self.rodadas):
@@ -53,7 +53,7 @@ class memoria:
             self.computer_numbers.append([number][:])
             
         print('\n','-=-' * 16,'\n')
-        print('\033[m')
+        ColorH.close()
         
         self.player_time()
         
