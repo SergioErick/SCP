@@ -1,3 +1,8 @@
 USER: Sergio Roberto
+<<<<<<< HEAD
 último acesso: 15/04/2020 21:26
 Vezes jogadas:7
+=======
+último acesso: 12/04/2020 21:45
+Vezes jogadas:5
+>>>>>>> master
